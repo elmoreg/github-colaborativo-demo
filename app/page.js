@@ -14,6 +14,12 @@ export default function Home() {
     setTareas((prev) => [...prev, nueva]);
   }
 
+  function alternarTarea(id) {
+    setTareas((prev) =>
+      prev.map((t) => (t.id === id ? { ...t, hecha: !t.hecha } : t))
+    );
+  }
+
   return (
     <main className="contenedor">
       <header className="header">
@@ -24,7 +30,11 @@ export default function Home() {
 
       <ul className="lista">
         {tareas.map((tarea) => (
-          <li key={tarea.id} className="item">
+          <li
+            key={tarea.id}
+            className="item"
+            onClick={() => alternarTarea(tarea.id)}
+          >
             {tarea.texto}
           </li>
         ))}
