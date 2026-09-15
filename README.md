@@ -43,3 +43,9 @@ Luego abre http://localhost:3000
 
 Lee [CONTRIBUTING.md](CONTRIBUTING.md) para el detalle del flujo de trabajo
 (nombres de rama, estilo de commits y proceso de Pull Request).
+
+## Guía del flujo (para aprender)
+
+Para un recorrido completo del trabajo colaborativo que quedó registrado en este
+repo (issues, PRs, code review y el conflicto resuelto), lee
+[GUIA-FLUJO.md](GUIA-FLUJO.md).
