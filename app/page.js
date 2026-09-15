@@ -8,6 +8,7 @@ export default function Home() {
     { id: 1, texto: "Aprender a crear ramas en Git", hecha: false },
     { id: 2, texto: "Abrir mi primer Pull Request", hecha: false },
   ]);
+  const [filtro, setFiltro] = useState("todas");
 
   function agregarTarea(texto) {
     const nueva = { id: Date.now(), texto, hecha: false };
@@ -22,6 +23,12 @@ export default function Home() {
 
   const pendientes = tareas.filter((t) => !t.hecha).length;
 
+  const tareasVisibles = tareas.filter((t) => {
+    if (filtro === "pendientes") return !t.hecha;
+    if (filtro === "completadas") return t.hecha;
+    return true;
+  });
+
   return (
     <main className="contenedor">
       <header className="header">
@@ -29,10 +36,22 @@ export default function Home() {
         <span className="contador">{pendientes} pendientes</span>
       </header>
 
+      <div className="filtros">
+        <button className="filtro-btn" onClick={() => setFiltro("todas")}>
+          Todas
+        </button>
+        <button className="filtro-btn" onClick={() => setFiltro("pendientes")}>
+          Pendientes
+        </button>
+        <button className="filtro-btn" onClick={() => setFiltro("completadas")}>
+          Completadas
+        </button>
+      </div>
+
       <TaskForm onAgregar={agregarTarea} />
 
       <ul className="lista">
-        {tareas.map((tarea) => (
+        {tareasVisibles.map((tarea) => (
           <li
             key={tarea.id}
             className={tarea.hecha ? "item hecha" : "item"}
