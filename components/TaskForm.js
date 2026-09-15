@@ -7,7 +7,11 @@ export default function TaskForm({ onAgregar }) {
 
   function manejarEnvio(evento) {
     evento.preventDefault();
-    onAgregar(texto);
+    const limpio = texto.trim();
+    if (limpio === "") {
+      return; // no se agregan tareas vacias
+    }
+    onAgregar(limpio);
     setTexto("");
   }
 
