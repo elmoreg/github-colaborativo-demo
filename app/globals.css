@@ -71,3 +71,12 @@ body {
   font-weight: 600;
   cursor: pointer;
 }
+
+.item {
+  cursor: pointer;
+}
+
+.item.hecha {
+  text-decoration: line-through;
+  color: #64748b;
+}

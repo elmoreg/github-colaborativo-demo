@@ -32,7 +32,7 @@ export default function Home() {
         {tareas.map((tarea) => (
           <li
             key={tarea.id}
-            className="item"
+            className={tarea.hecha ? "item hecha" : "item"}
             onClick={() => alternarTarea(tarea.id)}
           >
             {tarea.texto}
