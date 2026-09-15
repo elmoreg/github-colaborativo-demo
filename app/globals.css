@@ -46,3 +46,28 @@ body {
   padding: 0.6rem 0.4rem;
   border-bottom: 1px solid #334155;
 }
+
+.form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: var(--texto);
+}
+
+.form-boton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--acento);
+  color: #0f172a;
+  font-weight: 600;
+  cursor: pointer;
+}
