@@ -21,6 +21,8 @@ export default function Home() {
     );
   }
 
+  const pendientes = tareas.filter((t) => !t.hecha).length;
+
   const tareasVisibles = tareas.filter((t) => {
     if (filtro === "pendientes") return !t.hecha;
     if (filtro === "completadas") return t.hecha;
@@ -31,18 +33,20 @@ export default function Home() {
     <main className="contenedor">
       <header className="header">
         <h1>Mis Tareas</h1>
-        <div className="filtros">
-          <button className="filtro-btn" onClick={() => setFiltro("todas")}>
-            Todas
-          </button>
-          <button className="filtro-btn" onClick={() => setFiltro("pendientes")}>
-            Pendientes
-          </button>
-          <button className="filtro-btn" onClick={() => setFiltro("completadas")}>
-            Completadas
-          </button>
-        </div>
+        <span className="contador">{pendientes} pendientes</span>
       </header>
+
+      <div className="filtros">
+        <button className="filtro-btn" onClick={() => setFiltro("todas")}>
+          Todas
+        </button>
+        <button className="filtro-btn" onClick={() => setFiltro("pendientes")}>
+          Pendientes
+        </button>
+        <button className="filtro-btn" onClick={() => setFiltro("completadas")}>
+          Completadas
+        </button>
+      </div>
 
       <TaskForm onAgregar={agregarTarea} />
 

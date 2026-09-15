@@ -80,3 +80,23 @@ body {
   text-decoration: line-through;
   color: #64748b;
 }
+
+.contador {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.filtros {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filtro-btn {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid #334155;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--texto);
+  cursor: pointer;
+}
