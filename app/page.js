@@ -20,10 +20,13 @@ export default function Home() {
     );
   }
 
+  const pendientes = tareas.filter((t) => !t.hecha).length;
+
   return (
     <main className="contenedor">
       <header className="header">
         <h1>Mis Tareas</h1>
+        <span className="contador">{pendientes} pendientes</span>
       </header>
 
       <TaskForm onAgregar={agregarTarea} />
